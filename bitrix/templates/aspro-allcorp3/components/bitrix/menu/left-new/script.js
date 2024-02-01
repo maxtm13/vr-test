@@ -1,0 +1,58 @@
+/*side head block*/
+/*$(document).on("click", ".slide-block .slide-block__head", function (e) {
+    var _this = $(this),
+        menu = _this.siblings(".slide-block__body"),
+        bVisibleMeu = menu.is(":visible");
+
+    if (!_this.hasClass("clicked") && menu.length && !_this.hasClass("ignore") && !$(e.target).attr("href")) {
+        var type = _this.data("id");
+        _this.addClass("clicked");
+
+        if (bVisibleMeu) {
+            $.cookie(type + "_CLOSED", "Y", {
+                path: "/",
+            });
+            menu.slideUp();
+        } else {
+            $.removeCookie(type + "_CLOSED", {
+                path: "/",
+            });
+            menu.slideDown();
+        }
+
+        _this.toggleClass("closed");
+        _this.removeClass("clicked");
+    }
+});
+$(document).on("click", ".side-menu .toggle_block", function (e) {
+    var _this = $(this),
+        menu = _this.closest(".child").find("> .submenu-wrapper"),
+        bVisibleMeu = menu.is(":visible");
+
+    if (!_this.hasClass("clicked")) {
+        _this.addClass("clicked");
+        menu.slideToggle(150, function () {
+            _this.removeClass("clicked");
+        });
+        _this.toggleClass("closed");
+    }
+
+    _this.closest(".child").toggleClass("opened");
+});
+/**/
+
+window.addEventListener("load", () => {
+    let sbm = document.querySelectorAll('.submenu-wrapper')
+    for (i = 0; i < sbm.length; i += 1) {
+        sbm[i].remove()
+    }
+    let subMenu = document.querySelector(".sub-menu-items")
+    for (i = 0; i < sbm.length; i += 1) {
+        subMenu.appendChild(sbm[i]);
+    }
+    let child = document.getElementsByClassName("child")
+    for (i = 0; i < child.length; i += 1) {
+        if (child[i].classList.contains("opened")) sbm[i].classList.add("opened")
+    }
+})
+

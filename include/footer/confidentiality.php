@@ -1,0 +1,2 @@
+<a class="color_999 dark_link" href="<?=SITE_DIR?>include/licenses_detail.php">Политика конфиденциальности</a>
+<a class="color_999 dark_link" href="<?=SITE_DIR?>include/cookies_detail.php">Политика обработки cookie</a>

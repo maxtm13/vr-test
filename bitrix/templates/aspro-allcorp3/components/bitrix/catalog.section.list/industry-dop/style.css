@@ -1,0 +1,43 @@
+.bx_catalog_line .bx_catalog_line_ul li::before {
+  display: none;
+}
+
+.mygrid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.mygrid__items .services-list__wrapper {
+  min-height: auto;
+}
+
+.industries__item__dop {
+  display: flex;
+  height: 40px;
+}
+
+.industries__item__dop-icon {
+  display: inline-block;
+}
+.industries__item__dop-icon img {
+  min-width: 26px;
+  height: auto;
+}
+
+.industries__item__dop {
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .mygrid__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .mygrid__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

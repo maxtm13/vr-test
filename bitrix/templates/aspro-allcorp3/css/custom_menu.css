@@ -1,0 +1,173 @@
+/*NOTE: This file is intended for programmers. Aspro technical support is not advised to work with him.*/ /* Examples (uncomment to use):*/ /* Expand site width */ /* body .wrapper { max-width: 1400px !important; } */ /* Set site background image */ /* body { background: url(image_source) top no-repeat; } /* Hide compare button */ /* a.compare_item { display: none !important; }*/
+/*@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');*/
+@font-face {
+  font-family: "Forum";
+  src: url("../fonts/Forum-light.ttf");
+}
+.h1,.h2,.h3,.h4,.h5,.h6,.popup-window,h1,h2,h3,h4,h5,h6,.main__font{
+    font-family: "Forum";
+}
+/* МЕНЮ */
+.header-menu__dropdown-item--img-LEFT .header-menu__wide-item-wrapper > a.font_15.dark_link.switcher-title > span::before {
+    background-image: url(/bitrix/templates/aspro-allcorp3/images/menu-check-mark.png);
+    position: absolute;
+    left: -20px;
+    top: -6px;
+    height: 26px;
+    width: 28px;
+    content: " ";
+}
+.services-list__item--no-scrolled > div.services-list__item-text-wrapper.flexbox > div > div.services-list__item-title.switcher-title > a {padding-left: 30px;font-size: 28px;font-family: 'Forum';}
+/*.services-list__item--no-scrolled > div.services-list__item-text-wrapper.flexbox > div > div.services-list__item-title.switcher-title > a::before {*/
+/*    background-image: url(/bitrix/templates/aspro-allcorp3/images/menu-check-mark.png);*/
+/*    position: absolute;*/
+/*    left: -10px;*/
+/*    top: 0px;*/
+/*    height: 26px;*/
+/*    width: 28px;*/
+/*    content: " ";*/
+/*}*/
+
+.services-list__item-childs>ul>li {display: flex;}
+.services-list__item-childs-item-separator {display: none;}
+
+.header-menu__item--wide .header-menu__dropdown-item--img-LEFT {
+    padding-left: 20px;
+}
+.mega-fixed-menu--dark::before {
+    opacity: initial !important;
+    background-color: unset !important;
+}
+
+div.mobilemenu__menu.mobilemenu__menu--cabinet {
+    display: none;
+}
+.header-menu__wide-submenu{
+    font-size: 13px;
+}
+
+.mobileheader .line-block__item:not(.hidden)+.logo {max-width: 150px;}
+.rss .fill-theme-hover {display: none;}
+
+.tabs .nav-tabs li a, .tabs .nav-tabs li>span {font-weight: 100;}
+
+.service_h {font-family: "Forum"; color: #333;font-weight: 100;}
+h3.service_h {font-size: 46px;}
+h4.service_h {font-size: 26px;}
+
+.service_grid {display: grid; grid-template-columns: 1fr 1fr 1fr;}
+.service_grid li::before {content: url("/bitrix/templates/aspro-allcorp3/images/icon-check-mark1.png");}
+
+.service_grid .gr img {float: left;}
+.gr .gr_h {padding: 0px 20px 0px 40px;font-size: 15px;font-weight: 500; margin-bottom: 15px}
+.gr p {padding: 0px 20px 0px 40px;font-size: 12px;}
+
+.banners-big__title {font-family: "Forum"!important;font-size: 80px;font-weight: 100;}
+h3.index-block__title {font-family: "Forum";font-size: 46px; font-weight: 100;}
+.banners-img-with-text-list__item-text .switcher-title {font-family: "Forum";font-size: 45px;}
+
+
+.footer__top-part {background: #073454;}
+.subscribe-form input.subscribe-input {background-color: #073454 !important;}
+#footer {background: linear-gradient(135deg, #0D66A7, #073353);}
+.bottom-menu--normal .wrap .title a:not(:hover) {color: #F3F3F3;}
+.footer__part-item .footer__copy {color: #F3F3F3!important;}
+#bx_incl_area_38>a {color: #F3F3F3!important;}
+.footer__social .social__item {background: #0A4E7E;}
+.footer__license a {color: #FFF;}
+.price__new span.price__new-val {font-weight: 100;}
+a.services-list__item-link {display: none !important;}
+div.reviews-list__item-image {display: none;}
+.reviews-list__item-text .reviews-list__item-title {font-weight: 100;}
+h1#pagetitle {font-family: 'Forum';font-weight: 100;}
+.contacts__sticky-panel__desc h3 {font-weight: 400;}
+.contacts-list__section-title {font-family: 'Forum'!important;}
+.contacts-list__item-title a.dark_link {font-family: Montserrat; font-weight: 400;}
+.contacts-detail__btn-wrapper>span>span.btn {font-weight: 400;}
+body .project-list__item-title .dark_link {font-weight: 100;}
+body .banners-img-with-text-list__item-text--absolute * {font-weight: 100;}
+.side-menu.bordered {
+    /*border: none ;*/
+    }
+.staff-block-inner__section-title{font-family: "Forum" !important;font-size: 26px;}
+.switcher-title {font-weight: 100;}
+#main > div.body.index.hover_ > div.main.banner-auto > div > div.drag-block.container.MIDDLE_ADV > div > div > div > div > div{max-width: 440px;}
+.banners-big__buttons .btn {background-color: rgb(255 255 255 / 0%);
+    border-color: rgb(255 255 255 / 0%);padding-left:0;font-weight: 100;}
+.banners-big__buttons .btn:hover {background-color: rgb(255 255 255 / 0%);
+    border-color: rgb(255 255 255 / 0%);font-weight: 500;}
+.index-block--fon {background-color: #fff;}
+.services-list__item-image-wrapper--TOP {margin: 0px;}
+.services-list__item-section {margin: 0 0 50px 0;}
+.services-list__item-title {font-family: Montserrat!important;font-weight: 500;}
+.services-list__wrapper {min-height: 400px;}
+.b24-widget-button-inner-container {left: 30px;}
+
+.header-menu__item.unvisible.active{
+    background: linear-gradient(90deg, #0E8AE3 0%, #13CCF3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.more_info{
+    display: inline-block;
+    margin-top: 15px;
+}
+.header-menu__dropdown-menu{
+    -webkit-text-fill-color: #333;
+}
+.price__mobile-nav{
+    display: none;
+}
+#bx_incl_area_30б, .footer__license{
+    display:flex;
+    flex-direction: column;
+}
+.row__flex {
+    display: flex;
+}
+.col-md-4.left__menu {
+    margin-right: 5px;
+}
+
+.container .left_block {
+    width: 540px;
+}
+
+@media (min-width: 601px){
+.elements-count-4 .banners-img-with-text-list__item--short .banners-img-with-text-list__item-text--absolute {top:135px;}
+    .price__mobile-nav { display: block; }
+}
+@media (min-width: 992px) {
+    .grid-list--wide .banners-img-with-text-list__item-text--absolute {padding-left: 20px;padding-right: 20px;}
+    .banners-img-list__item-image.banners-img-list__item-image--one {min-height: 342px;}
+
+    .price__mobile-nav { display: none; }
+}
+@media (max-width:600px) {
+    .price__mobile-nav {
+        display: block;
+    }
+    #desc .service_grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* MOBILE */
+@media (max-width:480px) {
+    .price__mobile-nav { display: block; }
+.MIDDLE_ADV {display: none;}
+.mobileheader--color-colored {background-color: #FFF !important;}
+#main .mobileheader--color-colored .menu-light-icon-fill svg *, #main .mobileheader--color-dark .menu-light-icon-fill svg * {fill: #333;}
+.BOTTOM_BANNERS {display: none;}
+.service_grid {display: block !important;}
+}
+
+.accordion-open .svg-inline-right-arrow{
+    transform: rotate(0deg);
+}
+.accordion-head:hover .svg-inline-right-arrow {
+    transform: rotate(135deg) scale(1.1);
+}
+/*.price__mobile-nav{*/
+/*    display: none;*/
+/*}*/

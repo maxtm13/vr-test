@@ -1,0 +1,44 @@
+.industry{
+    margin-top: 80px;
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+    row-gap: 40px;
+    align-items: center;
+
+}
+.item{
+    /*display: flex;*/
+    /*width: 33%;*/
+}
+.item img{
+    /*width: 28px;*/
+    /*height: 26px;*/
+    transform: rotate(-90deg);
+}
+.item-name{
+    color: #333;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 146.667% */
+    max-width: 280px;
+
+}
+.item-link{
+    display: flex;
+}
+@media (max-width: 900px) {
+ .items{
+     grid-template-columns: repeat(2, 1fr);
+ }
+
+}
+@media (max-width: 600px) {
+    .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

@@ -1,0 +1,12 @@
+.custom-grid{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;column-gap:60px;row-gap:54px}.services-list-custom__item-title{font-family:Montserrat,sans-serif;font-size:22px;font-weight:600;display:flex;align-items:center;gap:10px}@media (max-width:1280px){.custom-grid{grid-template-columns:repeat(2,1fr);row-gap:33px}}@media (max-width:724px){.custom-grid{grid-template-columns:repeat(1,1fr);row-gap:40px}}
+/*!* item *!*/
+/*!* additional text *!*/
+/*!* text *!*/
+/*!* image *!*/
+/*!* arrow *!*/
+/*!* item sections *!*/
+/*!* title *!*/
+/*!* preview text *!*/
+/*!* properties *!*/
+/*!* section childs *!*/
+/*!* btn *!*/

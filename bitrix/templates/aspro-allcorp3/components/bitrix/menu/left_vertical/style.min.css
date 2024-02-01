@@ -1,0 +1,15 @@
+#vertical-left-menu,.sticky-block.sticky-block--show-Y>ul.root-item li a.item-selected,li.menu__item__parent.active span{position:relative}#vertical-left-menu li ul,#vertical-left-menu li::before,.sticky-block.sticky-block--show-Y ul.root-item li::before{display:none}.root-item{cursor:pointer}#vertical-left-menu li.active ul{display:block}#vertical-left-menu .menu__item__parent.active{position:static}#vertical-left-menu .menu__item__parent.active ul.root-item{position:absolute;right:0;top:0}.sticky-block.sticky-block--show-Y{display:grid;grid-template-columns:repeat(2,1fr);column-gap:20px}.sticky-block.sticky-block--show-Y>ul.root-item li a.item-selected::after,li.menu__item__parent.active span::after{content:"";position:absolute;width:100%;height:2px;background:linear-gradient(90deg,#0e8ae3 0,#13ccf3 100%);left:0;bottom:-2px}
+/*!*Submenu box*!*/
+/*!* Submenu Items *!*/
+/*!*Items selected*!*/
+/*!*Items Hover *!*/
+/*!*Rootmenu Items*!*/
+/*!*Rootmenu Items hover*!*/
+/*!*Rootmenu Items Selected*!*/
+/*!*Parent item*!*/
+/*!*Denied items*!*/
+/*!* Holly Hack. IE Requirement \*!*/
+/*!* End *!*/
+/*!*Submenu margin*!*/
+/*!*Submenu hide*!*/
+/*!*Submenu show*!*/
