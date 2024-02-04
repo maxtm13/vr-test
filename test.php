@@ -24,12 +24,7 @@ $APPLICATION->SetTitle("test");?>
 		"SAVE_IN_SESSION" => "N",
 		"TEXT_WIDTH" => "20"
 	)
-);?><pre><?
-			print_r($arrFilter333);
-			echo('====');
-			$arrFilter2['ID'] = array(0=>'663');
-			print_r($arrFilter2);?>
-</pre> <?$APPLICATION->IncludeComponent(
+);?> <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	".default",
 	Array(

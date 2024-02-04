@@ -157,9 +157,9 @@ $templateData = array(
 
 <? ob_start(); ?>
     <div
-        class="btn btn-default btn-wide btn-lg <?= ($bOrderButton && $bAskButton) ? 'btn-transparent-border' : ''; ?> animate-load"
-        data-event="jqm" data-param-id="<?= CAllcorp3::getFormID("aspro_allcorp3_question"); ?>"
-        data-autoload-need_product="<?= CAllcorp3::formatJsName($arResult['NAME']) ?>" data-name="question">
+            class="btn btn-default btn-wide btn-lg <?= ($bOrderButton && $bAskButton) ? 'btn-transparent-border' : ''; ?> animate-load"
+            data-event="jqm" data-param-id="<?= CAllcorp3::getFormID("aspro_allcorp3_question"); ?>"
+            data-autoload-need_product="<?= CAllcorp3::formatJsName($arResult['NAME']) ?>" data-name="question">
         <span><?= (strlen($arParams['S_ASK_QUESTION']) ? $arParams['S_ASK_QUESTION'] : Loc::getMessage('S_ASK_QUESTION')) ?></span>
     </div>
 <? $askButtonHtml = ob_get_clean() ?>
@@ -285,8 +285,8 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
             <div class="flexbox flexbox--direction-row ">
                 <div class="top-info__picture flex-1">
                     <div
-                        class="owl-carousel owl-carousel--color-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide"
-                        data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
+                            class="owl-carousel owl-carousel--color-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide"
+                            data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
                         <? foreach ($arResult['TOP_GALLERY'] as $arPhoto): ?>
                             <div class="top-info__picture-item">
                                 <a href="<?= $arPhoto['DETAIL']['SRC'] ?>" class="top-info__link fancy"
@@ -332,9 +332,9 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                                                                 <? if ($arProp["HINT"] && $arParams["SHOW_HINTS"] == "Y"): ?>
                                                                     <div class="hint hint--down">
                                                                         <span
-                                                                            class="hint__icon rounded bg-theme-hover border-theme-hover bordered"><i>?</i></span>
+                                                                                class="hint__icon rounded bg-theme-hover border-theme-hover bordered"><i>?</i></span>
                                                                         <div
-                                                                            class="tooltip"><?= $arProp["HINT"] ?></div>
+                                                                                class="tooltip"><?= $arProp["HINT"] ?></div>
                                                                     </div>
                                                                 <? endif; ?>
                                                             </div>
@@ -396,7 +396,7 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
     <? $this->SetViewTarget('top_detail_content'); ?>
     <? $class = 'bordered grey-bg'; ?>
     <div
-        class="detail-info-wrapper <?= ($templateData['SECTION_BNR_CONTENT'] || $bTopImg ? 'detail-info-wrapper--with-img' : ''); ?>">
+            class="detail-info-wrapper <?= ($templateData['SECTION_BNR_CONTENT'] || $bTopImg ? 'detail-info-wrapper--with-img' : ''); ?>">
         <? if (
         $arResult['PROPERTIES']['PHOTOPOS']['VALUE_XML_ID'] != 'TOP' &&
         $arResult['PROPERTIES']['PHOTOPOS']['VALUE_XML_ID'] != 'TOP_ON_HEAD' &&
@@ -442,20 +442,20 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                                                     <? foreach ($arResult['CHARACTERISTICS'] as $code => $arProp): ?>
                                                         <? if ($j < $arParams['VISIBLE_PROP_COUNT']): ?>
                                                             <div
-                                                                class="line-block__item col-lg-3 col-md-4 col-sm-6 detail-info__chars-item">
+                                                                    class="line-block__item col-lg-3 col-md-4 col-sm-6 detail-info__chars-item">
                                                                 <div class="properties__title font_13 color_999">
                                                                     <?= $arProp['NAME'] ?>
                                                                     <? if ($arProp["HINT"] && $arParams["SHOW_HINTS"] == "Y"): ?>
                                                                         <div class="hint hint--down">
                                                     <span
-                                                        class="hint__icon rounded bg-theme-hover border-theme-hover bordered"><i>?</i></span>
+                                                            class="hint__icon rounded bg-theme-hover border-theme-hover bordered"><i>?</i></span>
                                                                             <div
-                                                                                class="tooltip"><?= $arProp["HINT"] ?></div>
+                                                                                    class="tooltip"><?= $arProp["HINT"] ?></div>
                                                                         </div>
                                                                     <? endif; ?>
                                                                 </div>
                                                                 <div
-                                                                    class="properties__value color_333 font_15 font_short">
+                                                                        class="properties__value color_333 font_15 font_short">
                                                                     <? if (is_array($arProp["DISPLAY_VALUE"]) && count($arProp["DISPLAY_VALUE"]) > 1): ?>
                                                                         <?= implode(', ', $arProp["DISPLAY_VALUE"]); ?>
                                                                     <? elseif ($code == 'SITE'): ?>
@@ -639,7 +639,11 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
 
 <? // detail description?>
 <? $templateData['DETAIL_TEXT'] = boolval(strlen($arResult['DETAIL_TEXT'])); ?>
-<? if ($templateData['DETAIL_TEXT'] || $templateData['PREVIEW_TEXT']): ?>
+<? $templateData['TOP_SECTION'] = boolval(strlen($arResult['PROPERTIES']['TOP_SECTION']['VALUE']['TEXT'])); ?>
+<? $templateData['BOTTOM_SECTION'] = boolval(strlen($arResult['PROPERTIES']['BOTTOM_SECTION']['VALUE']['TEXT'])); ?>
+
+
+<? if ($templateData['DETAIL_TEXT'] || $templateData['PREVIEW_TEXT'] || $templateData['BOTTOM_SECTION'] || $templateData['TOP_SECTION']): ?>
     <? $this->SetViewTarget('PRODUCT_DETAIL_TEXT_INFO'); ?>
     <div class="content" itemprop="description">
         <!--Вывод "ситуаций"-->
@@ -718,8 +722,13 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
             <div class="situation-question">
                 <div class="situation-question-text">Не нашли вашу ситуацию? Задайте вопрос нашим юристам</div>
                 <div class="situation-question-buttons">
-                    <div class="btn animate-load btn-default has-ripple" data-event="jqm" data-param-id="5">Заказать бесплатную консультацию</div>
-                    <a data-b24-crm-button-widget-blank="" data-b24-crm-button-widget="openline_wz_whatsapp_c6bb79617919876aecd5b2f8aa53526c2" class="b24-widget-button-social-item ui-icon ui-icon-service-wz_whatsapp_c6bb79617919876aecd5b2f8aa53526c2 connector-icon-45" title="" data-b24-widget-sort="400" href="https://wa.me/79160880365" target="_blank">
+                    <div class="btn animate-load btn-default has-ripple" data-event="jqm" data-param-id="5">Заказать
+                        бесплатную консультацию
+                    </div>
+                    <a data-b24-crm-button-widget-blank=""
+                       data-b24-crm-button-widget="openline_wz_whatsapp_c6bb79617919876aecd5b2f8aa53526c2"
+                       class="b24-widget-button-social-item ui-icon ui-icon-service-wz_whatsapp_c6bb79617919876aecd5b2f8aa53526c2 connector-icon-45"
+                       title="" data-b24-widget-sort="400" href="https://wa.me/79160880365" target="_blank">
                         <i></i>
                         <span data-b24-crm-button-tooltip="" class="b24-widget-button-social-tooltip">WhatsApp</span>
                     </a>
@@ -728,6 +737,7 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
             </div>
         </div>
         <!--Вывод "ситуаций"_END-->
+
         <? if ($templateData['PREVIEW_TEXT']): ?>
             <div class="introtext">
                 <? if ($arResult['PREVIEW_TEXT_TYPE'] == 'text'): ?>
@@ -737,12 +747,124 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                 <? endif; ?>
             </div>
         <? endif ?>
-        <? if ($templateData['DETAIL_TEXT']): ?>
-            <?= $arResult['DETAIL_TEXT']; ?>
+        <!--        Вывод свойства _Первая часть страницы_-->
+        <? if ($templateData['TOP_SECTION']) : ?>
+            <?=$arResult['PROPERTIES']['TOP_SECTION']['~VALUE']['TEXT'];?>
+            <? elseif ($templateData['DETAIL_TEXT']): ?>
+                <?= $arResult['DETAIL_TEXT']; ?>
         <? endif; ?>
+
+
     </div>
+    <!--   maxtm1  -->
+    <div class="sevice_maxtm1">
+        <?//show services block?>
+        <!--    --><?//if($templateData['SERVICES']['VALUE'] && $templateData['SERVICES']['IBLOCK_ID']):?>
+        <!--        --><?//if(!isset($html_services)):?>
+        <?
+        $GLOBALS['arrServicesFilter'] = array('ID' => $templateData['SERVICES']['VALUE']);
+        $GLOBALS['arrServicesFilter'] = array_merge($GLOBALS['arrServicesFilter'], (array)$GLOBALS['arRegionLink']);
+        ?>
+        <!--            --><?//ob_start();?>
+        <!--            --><?//$bCheckAjaxBlock = CAllcorp3::checkRequestBlock("services-list-inner");?>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "items-list-servicesFoService",
+            array(
+                "IBLOCK_TYPE" => "aspro_allcorp3_content",
+                "IBLOCK_ID" => $templateData['SERVICES']['IBLOCK_ID'],
+                "NEWS_COUNT" => "20",
+                "SORT_BY1" => "SORT",
+                "SORT_ORDER1" => "ASC",
+                "SORT_BY2" => "ID",
+                "SORT_ORDER2" => "DESC",
+                "FILTER_NAME" => "arrServicesFilter",
+                "FIELD_CODE" => array(
+                    0 => "NAME",
+                    1 => "PREVIEW_TEXT",
+                    2 => "PREVIEW_PICTURE",
+                    3 => "DATE_ACTIVE_FROM",
+                    4 => "",
+                ),
+                "PROPERTY_CODE" => array(
+                    0 => "PRICE",
+                    1 => "PRICEOLD",
+                    2 => "ECONOMY",
+                    3 => "PERIOD",
+                    4 => "REDIRECT",
+                    5 => "",
+                ),
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "Y",
+                "AJAX_OPTION_HISTORY" => "N",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_FILTER" => "Y",
+                "CACHE_GROUPS" => "N",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "SET_TITLE" => "N",
+                "SET_STATUS_404" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "INCLUDE_SUBSECTIONS" => "Y",
+                "PAGER_TEMPLATE" => ".default",
+                "DISPLAY_TOP_PAGER" => "N",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "PAGER_TITLE" => "",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "COUNT_IN_LINE" => "2",
+
+                "ROW_VIEW" => true,
+                "BORDER" => true,
+                "DARK_HOVER" => false,
+                "ITEM_HOVER_SHADOW" => true,
+                "ROUNDED" => true,
+                "ROUNDED_IMAGE" => true,
+                "ITEM_PADDING" => true,
+                "ELEMENTS_ROW" => 4,
+                "MAXWIDTH_WRAP" => false,
+                "MOBILE_SCROLLED" => false,
+                "NARROW" => false,
+                "ITEMS_OFFSET" => true,
+                "IMAGES" => "PICTURE",
+                "IMAGE_POSITION" => "LEFT",
+                "SHOW_PREVIEW" => true,
+                "SHOW_TITLE" => false,
+                "SHOW_SECTION" => "Y",
+                "GRID_GAP"=> "32",
+                "PRICE_POSITION" => "TOP",
+                "TITLE_POSITION" => "",
+                "TITLE" => "",
+                "RIGHT_TITLE" => "",
+                "RIGHT_LINK" => "",
+                "CHECK_REQUEST_BLOCK" => $bCheckAjaxBlock,
+                "IS_AJAX" => CAllcorp3::checkAjaxRequest() && $bCheckAjaxBlock,
+                "NAME_SIZE" => "18",
+                "SUBTITLE" => "",
+                "SHOW_PREVIEW_TEXT" => "N",
+            ),
+            false, array("HIDE_ICONS" => "Y")
+        );?>
+        <!--            --><?//$html_services = trim(ob_get_clean());?>
+        <!--        --><?//endif;?>
+
+
+    </div>
+    <!--   maxtm1_END_  -->
     <? $this->EndViewTarget(); ?>
 <? endif; ?>
+
+
 
 <? // props content?>
 <? $templateData['CHARACTERISTICS'] = boolval($arResult['CHARACTERISTICS']); ?>
@@ -838,42 +960,42 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                 <?= $arResult["CHARACTERISTICS"]["TEXT_PROC"]["VALUE"] ?>
             </p>
             <? $arPropValue = $arResult["CHARACTERISTICS"]["_OUR_PROC"]["VALUE"]; ?>
-<!--            <pre>-->
-<!--                --><?//if (!isset($arPropValue)){ echo "Yes" ;}
-//                else {echo ("No");}
-//                ?>
-<!--            </pre>-->
-           <? if (isset($arPropValue)) {?>
-            <div class="grid_items  grid_items-desktop">
+            <!--            <pre>-->
+            <!--                --><? //if (!isset($arPropValue)){ echo "Yes" ;}
+            //                else {echo ("No");}
+            //                ?>
+            <!--            </pre>-->
+            <? if (isset($arPropValue)) { ?>
+                <div class="grid_items  grid_items-desktop">
 
-                <div class="left_content">
-                    <? for ($i = 0;
-                            $i < count($arPropValue);
-                            $i += 2) {
-                        ?>
-                        <div class="item">
-                            <div class="left_text"><?= $arPropValue[$i] ?></div>
-                            <div class="left_line"></div>
-                        </div>
-                    <? } ?>
+                    <div class="left_content">
+                        <? for ($i = 0;
+                                $i < count($arPropValue);
+                                $i += 2) {
+                            ?>
+                            <div class="item">
+                                <div class="left_text"><?= $arPropValue[$i] ?></div>
+                                <div class="left_line"></div>
+                            </div>
+                        <? } ?>
+                    </div>
+
+                    <div class="center_line"></div>
+
+                    <div class="right_content">
+                        <? for ($i = 0;
+                                $i < count($arPropValue);
+                                $i += 2) { ?>
+                            <div class="item">
+                                <? if (!$arPropValue[$i + 1]) break ?>
+                                <div class="right_line"></div>
+                                <div class="right_text"><?= $arPropValue[$i + 1] ?> </div>
+                            </div>
+                        <? } ?>
+                    </div>
+
                 </div>
-
-                <div class="center_line"></div>
-
-                <div class="right_content">
-                    <? for ($i = 0;
-                            $i < count($arPropValue);
-                            $i += 2) { ?>
-                        <div class="item">
-                            <? if (!$arPropValue[$i + 1]) break ?>
-                            <div class="right_line"></div>
-                            <div class="right_text"><?= $arPropValue[$i + 1] ?> </div>
-                        </div>
-                    <? } ?>
-                </div>
-
-            </div>
-            <?}?>
+            <? } ?>
             <div class="grid_items  grid_items-mobile">
                 <div class="center_line"></div>
                 <div class="grid_items-content">
@@ -919,7 +1041,7 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
 
                 <a href="<?= $arDocFile['SRC'] ?>" class="files__item-link" target="_blank">
                     <div
-                        class="files__item-icon"> <?= CAllcorp3::showIconSvg('image-preview fill-theme-target', SITE_TEMPLATE_PATH . '/images/files-type-icon.svg'); ?></div>
+                            class="files__item-icon"> <?= CAllcorp3::showIconSvg('image-preview fill-theme-target', SITE_TEMPLATE_PATH . '/images/files-type-icon.svg'); ?></div>
                     <div class="files__item-name">
                         <div class="files__item-name-name"><?= $arDocFile['FILENAME'] ?></div>
                         <div class="files__item-name-title"><?= $docFileDescr ?></div>
@@ -944,24 +1066,24 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
         <div class="flexbox flexbox--direction-row flexbox--align-center">
             <div class="gallery-view_switch__count color_666 font_13">
                 <div
-                    class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--small" <?= ($bShowSmallGallery ? "" : "style='display:none;'"); ?>>
+                        class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--small" <?= ($bShowSmallGallery ? "" : "style='display:none;'"); ?>>
                     <span class="gallery-view_switch__count-value"><?= count($arResult['BIG_GALLERY']); ?></span>
                     <?= Loc::getMessage('PHOTO'); ?>
                     <span class="gallery-view_switch__count-separate">&mdash;</span>
                 </div>
                 <div
-                    class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--big" <?= ($bShowSmallGallery ? "style='display:none;'" : ""); ?>>
+                        class="gallery-view_switch__count-wrapper gallery-view_switch__count-wrapper--big" <?= ($bShowSmallGallery ? "style='display:none;'" : ""); ?>>
                     <span class="gallery-view_switch__count-value">1/<?= count($arResult['BIG_GALLERY']); ?></span>
                     <span class="gallery-view_switch__count-separate">&mdash;</span>
                 </div>
             </div>
             <div class="gallery-view_switch__icons-wrapper">
                 <span
-                    class="gallery-view_switch__icons<?= (!$bShowSmallGallery ? ' active' : '') ?> gallery-view_switch__icons--big"
-                    title="<?= Loc::getMessage("BIG_GALLERY"); ?>"><?= CAllcorp3::showIconSvg("gallery", SITE_TEMPLATE_PATH . "/images/svg/gallery_alone.svg", "", "colored_theme_hover_bg-el-svg", true, false); ?></span>
+                        class="gallery-view_switch__icons<?= (!$bShowSmallGallery ? ' active' : '') ?> gallery-view_switch__icons--big"
+                        title="<?= Loc::getMessage("BIG_GALLERY"); ?>"><?= CAllcorp3::showIconSvg("gallery", SITE_TEMPLATE_PATH . "/images/svg/gallery_alone.svg", "", "colored_theme_hover_bg-el-svg", true, false); ?></span>
                 <span
-                    class="gallery-view_switch__icons<?= ($bShowSmallGallery ? ' active' : '') ?> gallery-view_switch__icons--small"
-                    title="<?= Loc::getMessage("SMALL_GALLERY"); ?>"><?= CAllcorp3::showIconSvg("gallery", SITE_TEMPLATE_PATH . "/images/svg/gallery_list.svg", "", "colored_theme_hover_bg-el-svg", true, false); ?></span>
+                        class="gallery-view_switch__icons<?= ($bShowSmallGallery ? ' active' : '') ?> gallery-view_switch__icons--small"
+                        title="<?= Loc::getMessage("SMALL_GALLERY"); ?>"><?= CAllcorp3::showIconSvg("gallery", SITE_TEMPLATE_PATH . "/images/svg/gallery_list.svg", "", "colored_theme_hover_bg-el-svg", true, false); ?></span>
             </div>
         </div>
     </div>
@@ -969,8 +1091,8 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
     <? // gallery big?>
     <div class="gallery-big"<?= ($bShowSmallGallery ? ' style="display:none;"' : ''); ?> >
         <div
-            class="owl-carousel owl-carousel--outer-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide owl-carousel--button-offset-half"
-            data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
+                class="owl-carousel owl-carousel--outer-dots owl-carousel--nav-hover-visible owl-bg-nav owl-carousel--light owl-carousel--button-wide owl-carousel--button-offset-half"
+                data-plugin-options='{"items": "1", "autoplay" : false, "autoplayTimeout" : "3000", "smartSpeed":1000, "dots": true, "dotsContainer": false, "nav": true, "loop": false, "index": true, "margin": 0}'>
             <? foreach ($arResult['BIG_GALLERY'] as $arPhoto): ?>
                 <div class="item">
                     <a href="<?= $arPhoto['DETAIL']['SRC'] ?>" class="fancy" data-fancybox="big-gallery" target="_blank"
