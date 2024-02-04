@@ -47,7 +47,7 @@ $templateData = array(
     'PROJECTS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_PROJECTS')),
     'SERVICES' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_SERVICES')),
     'GOODS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_GOODS', 'LINK_GOODS_FILTER')),
-    'TARIFFS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_TARIF')),
+    //'TARIFFS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_TARIF')),
 );
 
 ?>
@@ -757,42 +757,109 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
 
     </div>
     <!--   maxtm1  -->
-    <div class="sevice_maxtm1">
+    <div class="block-tariffsInPage">
         <?//show services block?>
         <!--    --><?//if($templateData['SERVICES']['VALUE'] && $templateData['SERVICES']['IBLOCK_ID']):?>
         <!--        --><?//if(!isset($html_services)):?>
         <?
-        $GLOBALS['arrServicesFilter'] = array('ID' => $templateData['SERVICES']['VALUE']);
-        $GLOBALS['arrServicesFilter'] = array_merge($GLOBALS['arrServicesFilter'], (array)$GLOBALS['arRegionLink']);
+//        $GLOBALS['arrServicesFilter'] = array('ID' => $templateData['SERVICES']['VALUE']);
+//        $GLOBALS['arrServicesFilter'] = array_merge($GLOBALS['arrServicesFilter'], (array)$GLOBALS['arRegionLink']);
         ?>
-        <!--            --><?//ob_start();?>
-        <!--            --><?//$bCheckAjaxBlock = CAllcorp3::checkRequestBlock("services-list-inner");?>
+
+
+
+<?
+        $GLOBALS['arrTariffsFilter'] = array('ID' => $arResult['PROPERTIES']['LINK_TARIF']['VALUE']);
+        $GLOBALS['arrTariffsFilter'] = array_merge($GLOBALS['arrTariffsFilter'], (array)$GLOBALS['arRegionLink']);
+?>
+
         <?$APPLICATION->IncludeComponent(
             "bitrix:news.list",
-            "items-list-servicesFoService",
+            "tariffs-list-forServicePage",
             array(
-                "IBLOCK_TYPE" => "aspro_allcorp3_content",
-                "IBLOCK_ID" => $templateData['SERVICES']['IBLOCK_ID'],
+                "IBLOCK_TYPE" => "aspro_allcorp3_catalog",
+                "IBLOCK_ID" => "35",
                 "NEWS_COUNT" => "20",
                 "SORT_BY1" => "SORT",
                 "SORT_ORDER1" => "ASC",
                 "SORT_BY2" => "ID",
                 "SORT_ORDER2" => "DESC",
-                "FILTER_NAME" => "arrServicesFilter",
+                "FILTER_NAME" => "arrTariffsFilter",
                 "FIELD_CODE" => array(
                     0 => "NAME",
                     1 => "PREVIEW_TEXT",
                     2 => "PREVIEW_PICTURE",
-                    3 => "DATE_ACTIVE_FROM",
-                    4 => "",
+                    3 => "",
                 ),
                 "PROPERTY_CODE" => array(
-                    0 => "PRICE",
-                    1 => "PRICEOLD",
-                    2 => "ECONOMY",
-                    3 => "PERIOD",
-                    4 => "REDIRECT",
-                    5 => "",
+                    0 => "",
+                    1 => "FORM_ORDER",
+                    2 => "HIT",
+                    3 => "ONLY_ONE_PRICE",
+                    4 => "PRICE_CURRENCY",
+                    5 => "TARIF_PRICE_1",
+                    6 => "TARIF_PRICE_2",
+                    7 => "TARIF_PRICE_2_DISC",
+                    8 => "TARIF_PRICE_3",
+                    9 => "TARIF_PRICE_3_DISC",
+                    10 => "TARIF_PRICE_DEFAULT",
+                    11 => "TARIF_PRICE_DEFAULT_DISC",
+                    12 => "MULTI_PROP_BOTTOM_PROPS",
+                    13 => "MULTI_PROP",
+                    14 => "SUPPLIED",
+                    15 => "USERS",
+                    16 => "EXTENSION",
+                    17 => "DURATION",
+                    18 => "GROUPS_USERS",
+                    19 => "TASK",
+                    20 => "ADMIN",
+                    21 => "VOLUME",
+                    22 => "ONLINE",
+                    23 => "FILE_STORAGE",
+                    24 => "MESSAGE",
+                    25 => "MEMORY",
+                    26 => "CPU",
+                    27 => "IP",
+                    28 => "HOSTING_SITES",
+                    29 => "KOLLICHESTVO_BAZ_DANNIX",
+                    30 => "UPDATES",
+                    31 => "LANGUAGES",
+                    32 => "TARIF_PRICE_1_DISC",
+                    33 => "TARIF_PRICE_4",
+                    34 => "ICON",
+                    35 => "VISA",
+                    36 => "NUM_DEVICES",
+                    37 => "APPLE",
+                    38 => "ELPURSE",
+                    39 => "API_INTEGRATION",
+                    40 => "SIEM_SYSTEM",
+                    41 => "COLLECT_INFO",
+                    42 => "RULES_SIGNAT",
+                    43 => "SCANNER",
+                    44 => "ANTIVIRUS",
+                    45 => "PROTECT_PAYMENT",
+                    46 => "PROTECT_CAMERA",
+                    47 => "ANTIVOR",
+                    48 => "CONTROL",
+                    49 => "SUPPORT_FREE",
+                    50 => "GUARANTEE",
+                    51 => "BLOCKING_SITES",
+                    52 => "BLOCKING_TRAFFIC",
+                    53 => "SECURITY",
+                    54 => "PROTECT_CHILDREN",
+                    55 => "SUM_FINANCING",
+                    56 => "TERM_LEASING",
+                    57 => "INSURANCE",
+                    58 => "CURRENCY",
+                    59 => "ADVANCE_PAY",
+                    60 => "RATE",
+                    61 => "PERCENTAGE",
+                    62 => "PAYMENTS",
+                    63 => "SUPPORT",
+                    64 => "NOTIFICATION",
+                    65 => "TURN",
+                    66 => "TARIF_ITEM",
+                    67 => "",
                 ),
                 "CHECK_DATES" => "Y",
                 "DETAIL_URL" => "",
@@ -801,11 +868,11 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                 "AJAX_OPTION_STYLE" => "Y",
                 "AJAX_OPTION_HISTORY" => "N",
                 "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "36000000",
+                "CACHE_TIME" => "3600000",
                 "CACHE_FILTER" => "Y",
-                "CACHE_GROUPS" => "N",
+                "CACHE_GROUPS" => "Y",
                 "PREVIEW_TRUNCATE_LEN" => "",
-                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ACTIVE_DATE_FORMAT" => "j F Y",
                 "SET_TITLE" => "N",
                 "SET_STATUS_404" => "N",
                 "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
@@ -814,51 +881,92 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
                 "PARENT_SECTION" => "",
                 "PARENT_SECTION_CODE" => "",
                 "INCLUDE_SUBSECTIONS" => "Y",
-                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TEMPLATE" => "ajax",
                 "DISPLAY_TOP_PAGER" => "N",
-                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_BOTTOM_PAGER" => "Y",
                 "PAGER_TITLE" => "",
                 "PAGER_SHOW_ALWAYS" => "N",
                 "PAGER_DESC_NUMBERING" => "N",
-                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "3600000",
                 "PAGER_SHOW_ALL" => "N",
-                "COUNT_IN_LINE" => "2",
-
-                "ROW_VIEW" => true,
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "SET_BROWSER_TITLE" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "COMPONENT_TEMPLATE" => "tariffs-list",
+                "SET_LAST_MODIFIED" => "N",
+                "STRICT_SECTION_CHECK" => "Y",
+                "SHOW_DETAIL_LINK" => "Y",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "SHOW_404" => "N",
+                "MESSAGE_404" => "",
+                "SHOW_DATE" => "N",
+                "COUNT_IN_LINE" => "3",
+                "USE_DETAIL" => $bTariffsUseDetail?"Y":"N",
+                "VISIBLE_PROP_COUNT" => "1",
+                "ROW_VIEW" => $tariffsDetailLinked=="type_3",
                 "BORDER" => true,
-                "DARK_HOVER" => false,
                 "ITEM_HOVER_SHADOW" => true,
+                "DARK_HOVER" => false,
                 "ROUNDED" => true,
-                "ROUNDED_IMAGE" => true,
-                "ITEM_PADDING" => true,
-                "ELEMENTS_ROW" => 4,
+                "ROUNDED_IMAGE" => $tariffsDetailLinked=="type_2"&&$itemsImages=="ROUND_IMAGES",
+                "ELEMENTS_ROW" => $tariffsDetailLinked=="type_3"?"1":"3",
                 "MAXWIDTH_WRAP" => false,
                 "MOBILE_SCROLLED" => false,
-                "NARROW" => false,
-                "ITEMS_OFFSET" => true,
-                "IMAGES" => "PICTURE",
-                "IMAGE_POSITION" => "LEFT",
-                "SHOW_PREVIEW" => true,
+                "HIDE_PAGINATION" => "N",
+                "SLIDER" => $tariffsDetailLinked!=="type_3",
+                "GRID_GAP" => $bItemsOffset?"0":"32",
+                "DOTS_0" => "Y",
+                "ITEM_0" => "1",
+                "DOTS_380" => "Y",
+                "ITEM_380" => "1",
+                "DOTS_768" => "N",
+                "ITEM_768" => "2",
+                "DOTS_1200" => "N",
+                "ITEM_1200" => "3",
+                "VIEW_TYPE" => $tariffsDetailLinked,
+                "ORDER_VIEW" => $bOrderViewBasket,
+                "NARROW" => true,
+                "ITEMS_OFFSET" => $bItemsOffset,
+                "IMAGES" => $itemsImages,
+                "HIDE_LEFT_TEXT_BLOCK" => "Y",
+                "TABS" => "INSIDE",
+                "DEFAULT_PRICE_KEY" => "",
                 "SHOW_TITLE" => false,
-                "SHOW_SECTION" => "Y",
-                "GRID_GAP"=> "32",
-                "PRICE_POSITION" => "TOP",
                 "TITLE_POSITION" => "",
                 "TITLE" => "",
                 "RIGHT_TITLE" => "",
                 "RIGHT_LINK" => "",
-                "CHECK_REQUEST_BLOCK" => $bCheckAjaxBlock,
-                "IS_AJAX" => CAllcorp3::checkAjaxRequest() && $bCheckAjaxBlock,
+                "CHECK_REQUEST_BLOCK" => CAllcorp3::checkRequestBlock("tariffs"),
+                "IS_AJAX" => CAllcorp3::checkAjaxRequest(),
                 "NAME_SIZE" => "18",
                 "SUBTITLE" => "",
-                "SHOW_PREVIEW_TEXT" => "N",
+                "SHOW_PREVIEW_TEXT" => "Y",
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO"
             ),
-            false, array("HIDE_ICONS" => "Y")
+            false,
+            array(
+                "HIDE_ICONS" => "N"
+            )
         );?>
-        <!--            --><?//$html_services = trim(ob_get_clean());?>
-        <!--        --><?//endif;?>
-
-
+    </div>
+    <div class="include_feedback">
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            "",
+            Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => "/include/free_consulting.php"
+            )
+        );?>
+    </div>
+    <div class="bottom_section">
+        <pre>
+            <?print_r($arResult['PROPERTIES']['BOTTOM_SECTION']['~VALUE']['TEXT'])?>
+        </pre>
     </div>
     <!--   maxtm1_END_  -->
     <? $this->EndViewTarget(); ?>
