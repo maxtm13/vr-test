@@ -52,7 +52,7 @@ foreach ($arTabOrder as $iTab => $tabCode) {
             "AREA_FILE_SHOW" => "file",
             "AREA_FILE_SUFFIX" => "inc",
             "EDIT_TEMPLATE" => "",
-            "PATH" => "/include/free_consulting.php"
+            "PATH" => "/include/free_consulting_service.php"
         )
     );?>
 <?endif;?>

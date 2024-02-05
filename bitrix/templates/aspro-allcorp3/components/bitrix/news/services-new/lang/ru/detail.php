@@ -1,7 +1,7 @@
 <?
 $MESS["ELEMENT_NOTFOUND"] = "Элемент не найден";
 $MESS["SHARE_TEXT"] = "Поделиться";
-$MESS["BACK_LINK"] = "Назад к списку";
+$MESS["BACK_LINK"] = "Все услуги";
 $MESS["S_ASK_QUESTION"] = "Задать вопрос";
 $MESS["S_ORDER_SERVISE"] = "Заказать услугу";
 $MESS["S_ORDER_STUDY"] = "Заказать курс";

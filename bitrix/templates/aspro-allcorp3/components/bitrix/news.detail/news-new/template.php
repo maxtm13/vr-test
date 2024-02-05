@@ -47,7 +47,7 @@ $templateData = array(
     'PROJECTS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_PROJECTS')),
     'SERVICES' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_SERVICES')),
     'GOODS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_GOODS', 'LINK_GOODS_FILTER')),
-    //'TARIFFS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_TARIF')),
+    'TARIFFS' => CAsproAllcorp3::getCrossLinkedItems($arResult, array('LINK_TARIF')),
 );
 
 ?>
@@ -749,7 +749,9 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
         <? endif ?>
         <!--        Вывод свойства _Первая часть страницы_-->
         <? if ($templateData['TOP_SECTION']) : ?>
+                <div class="top_section_page">
             <?=$arResult['PROPERTIES']['TOP_SECTION']['~VALUE']['TEXT'];?>
+                </div>
             <? elseif ($templateData['DETAIL_TEXT']): ?>
                 <?= $arResult['DETAIL_TEXT']; ?>
         <? endif; ?>
@@ -963,10 +965,10 @@ $bDiscountCounter = ($arResult['ACTIVE_TO'] && in_array('ACTIVE_TO', $arParams['
             )
         );?>
     </div>
-    <div class="bottom_section">
-        <pre>
-            <?print_r($arResult['PROPERTIES']['BOTTOM_SECTION']['~VALUE']['TEXT'])?>
-        </pre>
+    <div class="bottom_section_page">
+
+            <?=($arResult['PROPERTIES']['BOTTOM_SECTION']['~VALUE']['TEXT'])?>
+
     </div>
     <!--   maxtm1_END_  -->
     <? $this->EndViewTarget(); ?>
