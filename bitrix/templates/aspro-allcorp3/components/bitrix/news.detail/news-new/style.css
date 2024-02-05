@@ -121,6 +121,32 @@
   max-width: 250px;
 }
 
+.free-consulting-service {
+  display: flex;
+  align-items: center;
+  padding-bottom: 200px;
+  border-bottom: 1px solid #000000;
+}
+.free-consulting-service-text {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.27;
+  width: 66%;
+}
+.free-consulting-service-buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.free-consulting-service .btn.btn-default {
+  border-radius: 4px;
+  border: 1px solid rgba(14, 138, 227, 0);
+  background: linear-gradient(90deg, #0E8AE3 0%, #12CAF2 100%);
+  white-space: normal;
+  max-width: 250px;
+}
+
 @media (min-width: 768px) {
   .detail-info__btns {
     width: 289px;
@@ -147,6 +173,14 @@
     row-gap: 25px;
   }
 }
+.block-tariffsInPage {
+  margin-bottom: 116px;
+}
+
+.include_feedback {
+  margin-bottom: 116px;
+}
+
 .top-info {
   margin-bottom: 48px;
   overflow: hidden;
