@@ -81,7 +81,6 @@ $arSubSections = CAllcorp3Cache::CIblockSection_GetList(array("CACHE" => array("
     <?php if ($arParams['CHANGE_TEXT_AND_CARDS'] ==='Y'):?>
         <div class="text_before_items">
             <?=$arSection['DESCRIPTION'];?>
-            <pre>
                 <?php
                 $rsSection = CIBlockSection::GetList(
                     Array(),
@@ -91,17 +90,10 @@ $arSubSections = CAllcorp3Cache::CIblockSection_GetList(array("CACHE" => array("
                 );
                 if($arSection = $rsSection->GetNext()) {
                     ?>
-                    <?print_r($arSection["UF_SITUATION_INF"])?>
+                    <?//print_r($arSection["UF_SITUATION_INF"])?>
                     <?php
                 }
                 ?>
-
-                <?php
-//                print_r( $arSection );
-//                print_r('$arResult[ID]' . $arResult["ID"]);
-
-               ?>
-            </pre>
 
             <?$GLOBALS['arrFilterSituation']=array("ID" => ($arSection["UF_SITUATION_INF"]));?>
             <?$APPLICATION->IncludeComponent(

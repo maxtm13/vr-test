@@ -377,75 +377,75 @@ $arItems = $bItemsTypeElements ? $arResult['ITEMS'] : $arResult['SECTIONS'];
                                 <?endif; ?>
                             <?endif; ?>
 
-                            <? if (
-                                $bItemsTypeElements &&
-                                ($arItem['MIDDLE_PROPS'] || $arItem['FORMAT_PROPS'])
-                            ):?>
-                                <? if (array_key_exists('MIDDLE_PROPS', $arItem) && $arItem['MIDDLE_PROPS']):?>
-                                    <? ob_start() ?>
-                                    <? foreach ($arItem['MIDDLE_PROPS'] as $PCODE => $arProperty):?>
-                                        <div class="services-list__item-properties-item-wraper">
-                                            <div
-                                                class="services-list__item-properties-item <?= ($bFonImg ? 'color_light--opacity' : 'color_333') ?>"
-                                                data-code="<?= strtolower($PCODE) ?>">
-                                                <div
-                                                    class="services-list__item-properties-item-name"><?= $arProperty['NAME'] ?>
-                                                    :&nbsp;
-                                                </div>
-                                                <div class="services-list__item-properties-item-value">
-                                                    <? if ($PCODE === 'SITE'):?>
+<!--                            --><?// if (
+//                                $bItemsTypeElements &&
+//                                ($arItem['MIDDLE_PROPS'] || $arItem['FORMAT_PROPS'])
+//                            ):?>
+<!--                                --><?// if (array_key_exists('MIDDLE_PROPS', $arItem) && $arItem['MIDDLE_PROPS']):?>
+<!--                                    --><?// ob_start() ?>
+<!--                                    --><?// foreach ($arItem['MIDDLE_PROPS'] as $PCODE => $arProperty):?>
+<!--                                        <div class="services-list__item-properties-item-wraper">-->
+<!--                                            <div-->
+<!--                                                class="services-list__item-properties-item 1111--><?php //= ($bFonImg ? 'color_light--opacity' : 'color_333') ?><!--"-->
+<!--                                                data-code="--><?php //= strtolower($PCODE) ?><!--">-->
+<!--                                                <div-->
+<!--                                                    class="services-list__item-properties-item-name">--><?php //= $arProperty['NAME'] ?>
+<!--                                                    :&nbsp;-->
+<!--                                                </div>-->
+<!--                                                <div class="services-list__item-properties-item-value">-->
+<!--                                                    --><?// if ($PCODE === 'SITE'):?>
                                                         <!--noindex-->
-                                                        <a href="<?= (strpos($arProperty['VALUE'], 'http') === false ? 'http://' : '') . $arProperty['VALUE']; ?>"
-                                                           rel="nofollow" target="_blank" class="dark-link">
-                                                            <?= strpos($arProperty['VALUE'], '?') === false ? $arProperty['VALUE'] : explode('?', $arProperty['VALUE'])[0] ?>
-                                                        </a>
+<!--                                                        <a href="--><?php //= (strpos($arProperty['VALUE'], 'http') === false ? 'http://' : '') . $arProperty['VALUE']; ?><!--"-->
+<!--                                                           rel="nofollow" target="_blank" class="dark-link">-->
+<!--                                                            --><?php //= strpos($arProperty['VALUE'], '?') === false ? $arProperty['VALUE'] : explode('?', $arProperty['VALUE'])[0] ?>
+<!--                                                        </a>-->
                                                         <!--/noindex-->
-                                                    <? elseif ($PCODE === 'EMAIL'):?>
-                                                        <a href="mailto:<?= $arProperty['VALUE'] ?>"><?= $arProperty['VALUE'] ?></a>
-                                                    <? elseif ($PCODE === 'PHONE'):?>
-                                                        <a href="tel:<?= str_replace(array('+', ' ', ',', '-', '(', ')'), '', $arProperty['VALUE']) ?>"
-                                                           class="dark-color"><?= $arProperty['VALUE'] ?></a>
-                                                    <? else:?>
-                                                        <?= $arProperty['VALUE'] ?>
-                                                    <?endif; ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?endforeach; ?>
-                                    <? $htmlMiddleProperties = ob_get_clean() ?>
-
-                                    <? if (trim($htmlMiddleProperties)):?>
-                                        <div
-                                            class="services-list__item-properties services-list__item-properties--middle font_14"><?= $htmlMiddleProperties ?></div>
-                                    <?endif; ?>
-                                <?endif ?>
-
-                                <? if (array_key_exists('FORMAT_PROPS', $arItem) && $arItem['FORMAT_PROPS']):?>
-                                    <? ob_start() ?>
-                                    <? foreach ($arItem['FORMAT_PROPS'] as $PCODE => $arProperty):?>
-                                        <div class="services-list__item-properties-item-wraper">
-                                            <div
-                                                class="services-list__item-properties-item <?= ($bFonImg ? 'color_light--opacity' : 'color_333') ?>"
-                                                data-code="<?= strtolower($PCODE) ?>">
-                                                <span
-                                                    class="services-list__item-properties-item-name"><?= $arProperty['NAME'] ?>:&nbsp;</span>
-                                                <? if (is_array($arProperty['DISPLAY_VALUE'])):?>
-                                                    <? $val = implode('&nbsp;/&nbsp;', $arProperty['DISPLAY_VALUE']); ?>
-                                                <? else:?>
-                                                    <? $val = $arProperty['DISPLAY_VALUE']; ?>
-                                                <?endif; ?>
-                                                <span
-                                                    class="services-list__item-properties-item-value"><?= $val ?></span>
-                                            </div>
-                                        </div>
-                                    <?endforeach; ?>
-                                    <? $htmlProperties = ob_get_clean() ?>
-
-                                    <? if (trim($htmlProperties)):?>
-                                        <div class="services-list__item-properties font_14"><?= $htmlProperties ?></div>
-                                    <?endif; ?>
-                                <?endif ?>
-                            <?endif; ?>
+<!--                                                    --><?// elseif ($PCODE === 'EMAIL'):?>
+<!--                                                        <a href="mailto:--><?php //= $arProperty['VALUE'] ?><!--">--><?php //= $arProperty['VALUE'] ?><!--</a>-->
+<!--                                                    --><?// elseif ($PCODE === 'PHONE'):?>
+<!--                                                        <a href="tel:--><?php //= str_replace(array('+', ' ', ',', '-', '(', ')'), '', $arProperty['VALUE']) ?><!--"-->
+<!--                                                           class="dark-color">--><?php //= $arProperty['VALUE'] ?><!--</a>-->
+<!--                                                    --><?// else:?>
+<!--                                                        --><?php //= $arProperty['VALUE'] ?>
+<!--                                                    --><?//endif; ?>
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    --><?//endforeach; ?>
+<!--                                    --><?// $htmlMiddleProperties = ob_get_clean() ?>
+<!---->
+<!--                                    --><?// if (trim($htmlMiddleProperties)):?>
+<!--                                        <div-->
+<!--                                            class="services-list__item-properties services-list__item-properties--middle font_14">--><?php //= $htmlMiddleProperties ?><!--</div>-->
+<!--                                    --><?//endif; ?>
+<!--                                --><?//endif ?>
+<!---->
+<!--                                --><?// if (array_key_exists('FORMAT_PROPS', $arItem) && $arItem['FORMAT_PROPS']):?>
+<!--                                    --><?// ob_start() ?>
+<!--                                    --><?// foreach ($arItem['FORMAT_PROPS'] as $PCODE => $arProperty):?>
+<!--                                        <div class="services-list__item-properties-item-wraper">-->
+<!--                                            <div-->
+<!--                                                class="services-list__item-properties-item 2222--><?php //= ($bFonImg ? 'color_light--opacity' : 'color_333') ?><!--"-->
+<!--                                                data-code="--><?php //= strtolower($PCODE) ?><!--">-->
+<!--                                                <span-->
+<!--                                                    class="services-list__item-properties-item-name">--><?php //= $arProperty['NAME'] ?><!--:&nbsp;</span>-->
+<!--                                                --><?// if (is_array($arProperty['DISPLAY_VALUE'])):?>
+<!--                                                    --><?// $val = implode('&nbsp;/&nbsp;', $arProperty['DISPLAY_VALUE']); ?>
+<!--                                                --><?// else:?>
+<!--                                                    --><?// $val = $arProperty['DISPLAY_VALUE']; ?>
+<!--                                                --><?//endif; ?>
+<!--                                                <span-->
+<!--                                                    class="services-list__item-properties-item-value">--><?php //= $val ?><!--</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    --><?//endforeach; ?>
+<!--                                    --><?// $htmlProperties = ob_get_clean() ?>
+<!---->
+<!--                                    --><?// if (trim($htmlProperties)):?>
+<!--                                        <div class="services-list__item-properties font_14">--><?php //= $htmlProperties ?><!--</div>-->
+<!--                                    --><?//endif; ?>
+<!--                                --><?//endif ?>
+<!--                            --><?//endif; ?>
 
                             <? if (
                                 !$bItemsTypeElements &&
