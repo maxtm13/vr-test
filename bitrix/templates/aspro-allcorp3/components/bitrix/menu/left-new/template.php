@@ -7,7 +7,7 @@ if(!function_exists("ShowSubItemsLeft")){
 		?>
 		<?if(/*$arItem["SELECTED"] &&*/ $arItem["CHILD"]):?>
 			<?$noMoreSubMenuOnThisDepth = false;?>
-			<div class="submenu-wrapper">
+			<div class="submenu-wrapper" ">
 				<ul class="submenu">
 					<?foreach($arItem["CHILD"] as $arSubItem):?>
 						<li class="<?=($arSubItem["SELECTED"] ? "active opened" : "")?><?=($arSubItem["CHILD"] ? " child" : "")?>">
