@@ -1,6 +1,6 @@
 <?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
-	"left-new", 
+	"left-new-slide",
 	array(
 		"ROOT_MENU_TYPE" => "left",
 		"MENU_CACHE_TYPE" => "A",
@@ -13,7 +13,7 @@
 		"USE_EXT" => "Y",
 		"DELAY" => "N",
 		"ALLOW_MULTI_SELECT" => "N",
-		"COMPONENT_TEMPLATE" => "left-new"
+		"COMPONENT_TEMPLATE" => "left-new-slide"
 	),
 	false,
 	array(
