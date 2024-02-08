@@ -1,10 +1,12 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Компания", 
-		"/company/", 
+		"Отрасли", 
+		"/industry/", 
 		Array(), 
 		Array(), 
 		"" 
-	)
-);?>
+	),
+
+);
+?>
