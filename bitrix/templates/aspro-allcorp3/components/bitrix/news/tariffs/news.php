@@ -16,9 +16,9 @@ $arSubSections = CAllcorp3Cache::CIBlockSection_GetList(array("CACHE" => array("
 // is ajax: need for ajax pagination
 $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest'  && isset($_GET['ajax_get']) && $_GET['ajax_get'] === 'Y' || (isset($_GET['AJAX_REQUEST']) && $_GET['AJAX_REQUEST'] === 'Y');
 ?>
-<?if(CAllCorp3::GetFrontParametrValue('TARIFFS_USE_DETAIL') !== 'Y'):?>
-	<?CAllcorp3::goto404Page();?>
-<?else:?>
+<?//if(CAllCorp3::GetFrontParametrValue('TARIFFS_USE_DETAIL') !== 'Y'):?>
+<!--	--><?//CAllcorp3::goto404Page();?>
+<?//else:?>
 	<?if(!$itemsCnt && !$arSubSections):?>
 		<div class="alert alert-warning"><?=GetMessage("SECTION_EMPTY")?></div>
 	<?else:?>
@@ -54,7 +54,7 @@ $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_
 				<?@include_once('page_blocks/'.$sViewElementTemplate.'.php');?>
 			<?endif;?>
 		</div>
-	<?endif;?>
+<!--	--><?//endif;?>
 
 	<?// intro text?>
 	<?ob_start();?>
